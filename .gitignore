@@ -1,4 +1,8 @@
+# Ignore IntelliJ project files
+.idea
+
 # Ignore terraform state files
 /.terraform.lock.hcl
 /terraform.tfstate
 .terraform
+/terraform.tfstate.backup

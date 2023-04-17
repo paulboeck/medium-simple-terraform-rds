@@ -8,18 +8,10 @@ resource "aws_security_group" "example" {
   }
 }
 
-resource "aws_security_group_rule" "example" {
-  type              = "ingress"
-  from_port         = 3306
-  to_port           = 3306
-  protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0"]
-  security_group_id = aws_security_group.example.id
-}
-
 resource "aws_db_instance" "example" {
   engine                 = "mysql"
-  engine_version         = "8.0.32"
+  db_name                = "example"
+  identifier             = "example"
   instance_class         = "db.t2.micro"
   allocated_storage      = 20
   publicly_accessible    = true
